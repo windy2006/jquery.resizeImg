@@ -11,7 +11,7 @@
 下载并复制 jquery.resizeImg.js，mobileBUGFix.mini.js 到网站目录，同时也需要事先准备好 jQuery 框架。
 
 ```html
-<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="vendor/jquery-4.0.0.min.js"></script>
 <script type="text/javascript" src="/path/to/jquery.resizeImg.js"></script>
 <script type="text/javascript" src="/path/to/mobileBUGFix.mini.js"></script>
 ```
@@ -37,3 +37,8 @@ $(fileObj).resizeImg(options);
 同时，opt亦可为一个返回此标准对象的函数，以自动响应页面其他元素的设置变更。
 
 本插件调用比较简单，更多可参考 [演示页面](https://windy2006.github.io/jquery.resizeImg/)
+## 2026-10-24 更新
+
+保留原 jQuery 插件接口与样例主体，示例使用本地 jQuery 4.0.0、Bootstrap 5.3.8。`vendor/original-theme.css` 维持原示例的布局外观；上游许可证随依赖保留。
+
+本地预览：在仓库目录运行 `python3 -m http.server 8765`，打开 http://localhost:8765/。

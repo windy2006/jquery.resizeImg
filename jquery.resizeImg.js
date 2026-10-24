@@ -37,7 +37,7 @@ $.fn.resizeImg = function(options) {
     this.on('change', function() {
         if(this.value==="") return;
         let file = this.files[0];
-        if($.isFunction(options)) opt = options();
+        if(typeof options === 'function') opt = options();
         getOrientation(file, function(orientation){
             let reader, blob;
             if(typeof(FileReader)==='function') {
@@ -46,7 +46,7 @@ $.fn.resizeImg = function(options) {
                 let URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
                 blob = URL.createObjectURL(file);
             }
-            if($.isFunction(opt.before)) opt.before(file);
+            if(typeof opt.before === 'function') opt.before(file);
             let img = new Image();
             img.onload = function() {
                 let para = getOpt(this.width, this.height, file.size);
@@ -116,7 +116,7 @@ $.fn.resizeImg = function(options) {
                 } else {
                     result = canvas.toDataURL(opt.type, opt.quality);
                 }
-                if($.isFunction(opt.callback)) opt.callback(result);
+                if(typeof opt.callback === 'function') opt.callback(result);
             }
 
             if(!!reader) {
